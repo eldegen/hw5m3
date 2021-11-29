@@ -10,19 +10,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.hw5m3.databinding.FragmentMainBinding;
-import com.example.hw5m3.databinding.FragmentSecondBinding;
+import com.example.hw5m3.databinding.FragmentThirdBinding;
 
-public class SecondFragment extends Fragment {
-    private FragmentSecondBinding binding;
+public class ThirdFragment extends Fragment {
+    private FragmentThirdBinding binding;
 
-    public static final String PUT_KEY = "second_text.key";
+    public static final String PUT_KEY = "third_text.key";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = FragmentSecondBinding.inflate(inflater, container, false);
+        binding = FragmentThirdBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
 
@@ -30,7 +29,7 @@ public class SecondFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         if (getArguments() != null) {
-            String value = getArguments().getString(MainFragment.PUT_KEY);
+            String value = getArguments().getString(SecondFragment.PUT_KEY);
             binding.tvText.setText(value);
         }
 
@@ -39,9 +38,9 @@ public class SecondFragment extends Fragment {
             public void onClick(View v) {
                 Bundle bundle = new Bundle();
                 bundle.putString(PUT_KEY, binding.tvText.getText().toString());
-                ThirdFragment thirdFragment = new ThirdFragment();
-                thirdFragment.setArguments(bundle);
-                requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fl_container, thirdFragment).commit();
+                FourthFragment fourthFragment = new FourthFragment();
+                fourthFragment.setArguments(bundle);
+                requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fl_container, fourthFragment).commit();
             }
         });
     }

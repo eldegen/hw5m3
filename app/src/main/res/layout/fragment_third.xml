@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".SecondFragment">
+    tools:context=".ThirdFragment"
+    android:background="@color/teal_200">
 
     <TextView
         app:layout_constraintTop_toTopOf="parent"
