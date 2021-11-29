@@ -15,16 +15,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(R.layout.activity_main);
+        setContentView(binding.getRoot());
         initViews();
-        binding.flContainer2.setVisibility(View.VISIBLE);
     }
 
     private void initViews() {
         getSupportFragmentManager().beginTransaction().add(R.id.fl_container, new MainFragment()).commit();
-    }
-
-    public void onSendClick(View view) {
-        Toast.makeText(this, "fdfadsf", Toast.LENGTH_SHORT).show();
     }
 }

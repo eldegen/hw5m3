@@ -26,7 +26,7 @@ public class MainFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = FragmentMainBinding.inflate(inflater, container, false);
-        return inflater.inflate(R.layout.fragment_main, container, false);
+        return binding.getRoot();
     }
 
     @Override
@@ -42,7 +42,7 @@ public class MainFragment extends Fragment {
                     SecondFragment secondFragment = new SecondFragment();
                     secondFragment.setArguments(bundle);
 
-                    requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fl_container_2, secondFragment).commit();
+                    requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fl_container, secondFragment).commit();
 
                 }
             }

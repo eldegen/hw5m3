@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.hw5m3.databinding.FragmentMainBinding;
 import com.example.hw5m3.databinding.FragmentSecondBinding;
 
 public class SecondFragment extends Fragment {
@@ -19,7 +20,8 @@ public class SecondFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_second, container, false);
+        binding = FragmentSecondBinding.inflate(inflater, container, false);
+        return binding.getRoot();
     }
 
     @Override
