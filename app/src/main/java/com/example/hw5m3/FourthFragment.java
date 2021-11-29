@@ -38,9 +38,9 @@ public class FourthFragment extends Fragment {
             public void onClick(View v) {
                 Bundle bundle = new Bundle();
                 bundle.putString(PUT_KEY, binding.tvText.getText().toString());
-
-
-//                requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fl_container, secondFragment).commit();
+                FifthFragment fifthFragment = new FifthFragment();
+                fifthFragment.setArguments(bundle);
+                requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fl_container, fifthFragment).commit();
             }
         });
     }
